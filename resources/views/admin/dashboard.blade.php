@@ -54,7 +54,6 @@
                             <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KETINGGIAN AIR</p>
                             <h5 class="font-weight-bolder mb-0 text-dark">
                               5,3m
-                              <span class="text-success text-sm font-weight-bolder">+55%</span>
                             </h5>
                           </div>
                           <div class="col-4 text-end">
@@ -79,10 +78,9 @@
                       <div class="numbers">
                         <div class="row">
                           <div class="col-8">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KECEPATAN AIRS</p>
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KECEPATAN AIR</p>
                             <h5 class="font-weight-bolder mb-0 text-dark">
                               3,2m/s
-                              <span class="text-success text-sm font-weight-bolder">+30%</span>
                             </h5>
                           </div>
                           <div class="col-4 text-end">
@@ -126,7 +124,7 @@
                         </h5>
                       </div>
                     </div>
-                    
+
                     <div class="card-body p-3 text-center">
                       <div class="numbers">
                         <h5 class="font-weight-bolder mb-0 text-dark">
