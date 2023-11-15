@@ -24,11 +24,12 @@ class Dashboard extends Controller
             $cities = [];
         }
 
-        // $sensorData = [Dashboard::getSensor()];
+        $sensorData = [Dashboard::getSensor()];
 
         return view('admin.dashboard', [
             'title' => $title,
-            'cities' => $cities
+            'cities' => $cities,
+            'sensorData' => $sensorData
         ]);
     }
 
@@ -46,77 +47,29 @@ class Dashboard extends Controller
         return ($responseBody);
     }
 
-    // public function getSensor()
-    // {
-    //     $url = "";
-
-    //     $response = Http::get($url, [
-    //         "token" => "a50948b4ce3ff755f002f4c366a9e8c8"
-    //     ]);
-
-    //     $responseBody = json_decode($response->getBody());
-
-    //     return ($responseBody);
-    // }
-
-    public function create()
+    public function getSensor()
     {
-        //
+        $url = "https://blynk.cloud/external/api/getAll";
+
+        $response = Http::get($url, [
+            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP"
+        ]);
+
+        $responseBody = json_decode($response->getBody(), true);
+
+        return ($responseBody);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getRealtimeSensor()
     {
-        //
-    }
+        $url = "https://blynk.cloud/external/api/getAll";
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $response = Http::get($url, [
+            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP"
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $responseBody = json_decode($response->getBody());
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return response()->json($responseBody);
     }
 }
