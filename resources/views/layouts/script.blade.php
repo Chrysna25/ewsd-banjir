@@ -5,6 +5,7 @@
 <script src="{{ asset('/assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
 <script src="{{ asset('/assets/js/plugins/chartjs.min.js')}}"></script>
 <script src="{{ asset('/assets/js/getWeather.js') }}"></script>
+<script src="{{ asset('/assets/js/ajaxSensorData.js') }}"></script>
 <script>
   var ctx2 = document.getElementById("chart-line").getContext("2d");
 
@@ -123,7 +124,7 @@
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.7"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function() {
     const needle = document.querySelector(".needle");
 
     // Fungsi untuk mengatur sudut jarum
@@ -205,9 +206,9 @@
       var dy = y2 - y1;
       let slopeOfLine = dy / dx;
       var degOfLine =
-        Math.atan(slopeOfLine) * (180 / Math.PI) > 0
-          ? Math.atan(slopeOfLine) * (180 / Math.PI)
-          : 180 + Math.atan(slopeOfLine) * (180 / Math.PI);
+        Math.atan(slopeOfLine) * (180 / Math.PI) > 0 ?
+        Math.atan(slopeOfLine) * (180 / Math.PI) :
+        180 + Math.atan(slopeOfLine) * (180 / Math.PI);
       var degOfNeedle = rotation * (180 / Math.PI);
 
       if (rotation >= 0.75 * Math.PI) {
@@ -286,4 +287,3 @@
     }
   }
 </script>
-

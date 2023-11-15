@@ -15,3 +15,5 @@ use App\Http\Controllers\Dashboard;
 */
 
 Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
+
+Route::get('/get-sensor', [Dashboard::class, 'getSensor']);

@@ -20,13 +20,15 @@
           <div class="card bg-gradient-info">
             <div class="card-body p-3">
               <div class="row">
-                <div class="weather-container">
-                  <p id="weather-city">{{$cityData -> name}}</p>
-                  <div id="weather-icon">
+                <div class="weather-container row">
+                  <div id="weather-icon" class="col-4">
                     <img src='http://openweathermap.org/img/w/{{$cityData->weather[0]->icon}}.png' alt="Weather Icon">
                   </div>
-                  <div id="weather-description">{{$cityData -> weather[0]->description}}</div>
-                  <div id="temperature">{{$cityData -> main->temp}}</div>
+                  <div class="col-8">
+                    <p class="text-start fw-bold mb-0">{{$cityData -> name}}</p>
+                    <p class="text-start mb-0">{{$cityData -> weather[0]->description}}</p`>
+                    <p class="text-start mb-0">{{ round($cityData->main->temp - 273.15, 2) }}°C</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -42,7 +44,8 @@
           <div class="card bg-gradient-info">
             <!-- Outer Card Body -->
             <div class="card-body p-3">
-              <div class="row">
+              <div class="row" id="#sensor-data">
+                @foreach ($sensorData as $sensor)
                 <!-- Inner Card 1 -->
                 <div class="col-md-6 mb-4">
                   <div class="card shadow">
@@ -52,9 +55,8 @@
                         <div class="row">
                           <div class="col-8">
                             <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KETINGGIAN AIR</p>
-                            <h5 class="font-weight-bolder mb-0 text-dark">
-                              5,3m
-                              <span class="text-success text-sm font-weight-bolder">+55%</span>
+                            <h5 class="font-weight-bolder mb-0 text-dark" id="ketinggian-air">
+                              {{ $sensor['v0'] }} m
                             </h5>
                           </div>
                           <div class="col-4 text-end">
@@ -79,10 +81,9 @@
                       <div class="numbers">
                         <div class="row">
                           <div class="col-8">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KECEPATAN AIRS</p>
-                            <h5 class="font-weight-bolder mb-0 text-dark">
-                              3,2m/s
-                              <span class="text-success text-sm font-weight-bolder">+30%</span>
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KECEPATAN ARUS</p>
+                            <h5 class="font-weight-bolder mb-0 text-dark" id="kecepatan-arus">
+                              {{ $sensor['v1'] }} ml/min
                             </h5>
                           </div>
                           <div class="col-4 text-end">
@@ -126,7 +127,7 @@
                         </h5>
                       </div>
                     </div>
-                    
+
                     <div class="card-body p-3 text-center">
                       <div class="numbers">
                         <h5 class="font-weight-bolder mb-0 text-dark">
@@ -140,6 +141,7 @@
                 </div>
                 <!-- End Inner Card 3 -->
               </div>
+              @endforeach
             </div>
             <!-- End Outer Card Body -->
           </div>
