@@ -24,6 +24,8 @@ class Dashboard extends Controller
             $cities = [];
         }
 
+        // $sensorData = [Dashboard::getSensor()];
+
         return view('admin.dashboard', [
             'title' => $title,
             'cities' => $cities
@@ -43,6 +45,19 @@ class Dashboard extends Controller
 
         return ($responseBody);
     }
+
+    // public function getSensor()
+    // {
+    //     $url = "";
+
+    //     $response = Http::get($url, [
+    //         "token" => "a50948b4ce3ff755f002f4c366a9e8c8"
+    //     ]);
+
+    //     $responseBody = json_decode($response->getBody());
+
+    //     return ($responseBody);
+    // }
 
     public function create()
     {

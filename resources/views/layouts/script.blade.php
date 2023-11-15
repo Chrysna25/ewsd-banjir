@@ -29,7 +29,7 @@
           tension: 0.4,
           borderWidth: 0,
           pointRadius: 0,
-          borderColor: "#cb0c9f",
+          borderColor: "#cb0c3f",
           borderWidth: 3,
           backgroundColor: gradientStroke1,
           fill: true,
