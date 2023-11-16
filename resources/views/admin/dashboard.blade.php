@@ -93,44 +93,20 @@
             </div>
             <!-- Sensor Data Section End -->
 
-            <!-- Label Alert Section -->
-            <div class="row">
-              <div class="col-md-6 mx-auto mb-4">
-                <div class="card">
+            <!-- Label Alert Section -->s
+            <div class="col-md-6 mx-auto mb-4">
+              <div class="card" id="card-status">
                   <div class="card-body p-3 text-center">
                     <div class="numbers">
-                      <h5 class="font-weight-bolder mb-0 text-dark">
+                      <h5 class="font-weight-bolder mb-0 text-light" id="status">
                         AMAN
                       </h5>
-                    </div>
                   </div>
-
-                  <div class="card-body p-3 text-center">
-                    <div class="numbers">
-                      <h5 class="font-weight-bolder mb-0 text-dark">
-                        SIAGA
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="card-body p-3 text-center">
-                    <div class="numbers">
-                      <h5 class="font-weight-bolder mb-0 text-dark">
-                        WASPADA
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="card-body p-3 text-center">
-                    <div class="numbers">
-                      <h5 class="font-weight-bolder mb-0 text-dark">
-                        BAHAYA
-                      </h5>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
+          </div>
+      </div>
+
+
             <!-- Label Alert Section End -->
 
           </div>
