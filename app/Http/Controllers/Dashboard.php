@@ -59,17 +59,4 @@ class Dashboard extends Controller
 
         return ($responseBody);
     }
-
-    public function getRealtimeSensor()
-    {
-        $url = "https://blynk.cloud/external/api/getAll";
-
-        $response = Http::get($url, [
-            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP"
-        ]);
-
-        $responseBody = json_decode($response->getBody());
-
-        return response()->json($responseBody);
-    }
 }

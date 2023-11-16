@@ -37,118 +37,107 @@
         @endforeach
       </div>
 
-      <!-- Alert -->
+      <!-- Section Sensor -->
+      @foreach ($sensorData as $sensor)
       <div class="row mt-4">
-        <div class="col-xl-12 mb-xl-0 mb-4">
-          <!-- Outer Card -->
-          <div class="card bg-gradient-info">
-            <!-- Outer Card Body -->
-            <div class="card-body p-3">
-              <div class="row" id="#sensor-data">
-                @foreach ($sensorData as $sensor)
-                <!-- Inner Card 1 -->
-                <div class="col-md-6 mb-4">
-                  <div class="card shadow">
-                    <!-- Inner Card Body 1 -->
-                    <div class="card-body p-3 text-center">
-                      <div class="numbers">
-                        <div class="row">
-                          <div class="col-8">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KETINGGIAN AIR</p>
-                            <h5 class="font-weight-bolder mb-0 text-dark" id="ketinggian-air">
-                              {{ $sensor['v0'] }} m
-                            </h5>
-                          </div>
-                          <div class="col-4 text-end">
-                            <div class="icon icon-shape bg-gradient-success
-                             shadow text-center border-radius-md">
-                              <i class="ni ni-bold-up text-lg opacity-10" aria-hidden="true"></i>
-                            </div>
+        <div class="card bg-gradient-info">
+          <div class="card-body p-3">
+
+            <!-- Sensor Section Data -->
+            <div class="row" id="sensor-data">
+              <div class="col-md-6 mb-4">
+                <div class="card shadow">
+                  <div class="card-body p-3 text-center">
+                    <div class="numbers">
+                      <div class="row">
+                        <div class="col-8">
+                          <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Ketinggian Air</p>
+                          <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data1">
+                            {{$sensor['v0']}} m
+                          </h5>
+                        </div>
+                        <div class="col-4 text-end">
+                          <div class="icon icon-shape bg-gradient-success
+                               shadow text-center border-radius-md">
+                            <i class="ni ni-bold-up text-lg opacity-10" aria-hidden="true"></i>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!-- End Inner Card Body 1 -->
                   </div>
                 </div>
-                <!-- End Inner Card 1 -->
-
-                <!-- Inner Card 2 -->
-                <div class="col-md-6 mb-4">
-                  <div class="card shadow">
-                    <!-- Inner Card Body 2 -->
-                    <div class="card-body p-3 text-center">
-                      <div class="numbers">
-                        <div class="row">
-                          <div class="col-8">
-                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">KECEPATAN ARUS</p>
-                            <h5 class="font-weight-bolder mb-0 text-dark" id="kecepatan-arus">
-                              {{ $sensor['v1'] }} ml/min
-                            </h5>
-                          </div>
-                          <div class="col-4 text-end">
-                            <div class="icon icon-shape bg-gradient-success shadow text-center border-radius-md">
-                              <i class="ni ni-sound-wave text-lg opacity-10" aria-hidden="true"></i>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- End Inner Card Body 2 -->
-                  </div>
-                </div>
-                <!-- End Inner Card 2 -->
-
-                <!-- Inner Card 3 -->
-                <div class="col-md-6 mx-auto mb-4">
-                  <div class="card">
-                    <!-- Inner Card Body 3 -->
-
-                    <div class="card-body p-3 text-center">
-                      <div class="numbers">
-                        <h5 class="font-weight-bolder mb-0 text-dark">
-                          AMAN
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div class="card-body p-3 text-center">
-                      <div class="numbers">
-                        <h5 class="font-weight-bolder mb-0 text-dark">
-                          SIAGA
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div class="card-body p-3 text-center">
-                      <div class="numbers">
-                        <h5 class="font-weight-bolder mb-0 text-dark">
-                          WASPADA
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div class="card-body p-3 text-center">
-                      <div class="numbers">
-                        <h5 class="font-weight-bolder mb-0 text-dark">
-                          BAHAYA
-                        </h5>
-                      </div>
-                    </div>
-
-                    <!-- End Inner Card Body 3 -->
-                  </div>
-                </div>
-                <!-- End Inner Card 3 -->
               </div>
-              @endforeach
+
+              <div class="col-md-6 mb-4">
+                <div class="card shadow">
+                  <div class="card-body p-3 text-center">
+                    <div class="numbers">
+                      <div class="row">
+                        <div class="col-8">
+                          <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Kecepatan Arus</p>
+                          <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data2">
+                            {{$sensor['v1']}} ml/m
+                          </h5>
+                        </div>
+                        <div class="col-4 text-end">
+                          <div class="icon icon-shape bg-gradient-success
+                               shadow text-center border-radius-md">
+                            <i class="ni ni-bold-up text-lg opacity-10" aria-hidden="true"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <!-- End Outer Card Body -->
+            <!-- Sensor Data Section End -->
+
+            <!-- Label Alert Section -->
+            <div class="row">
+              <div class="col-md-6 mx-auto mb-4">
+                <div class="card">
+                  <div class="card-body p-3 text-center">
+                    <div class="numbers">
+                      <h5 class="font-weight-bolder mb-0 text-dark">
+                        AMAN
+                      </h5>
+                    </div>
+                  </div>
+
+                  <div class="card-body p-3 text-center">
+                    <div class="numbers">
+                      <h5 class="font-weight-bolder mb-0 text-dark">
+                        SIAGA
+                      </h5>
+                    </div>
+                  </div>
+
+                  <div class="card-body p-3 text-center">
+                    <div class="numbers">
+                      <h5 class="font-weight-bolder mb-0 text-dark">
+                        WASPADA
+                      </h5>
+                    </div>
+                  </div>
+
+                  <div class="card-body p-3 text-center">
+                    <div class="numbers">
+                      <h5 class="font-weight-bolder mb-0 text-dark">
+                        BAHAYA
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Label Alert Section End -->
+
           </div>
-          <!-- End Outer Card -->
         </div>
       </div>
-      <!-- Akghir Alert-->
+      @endforeach
+      <!-- Section Sensor End -->
 
       <!-- Graph -->
       <div class="container-fluid py-2 mt-2">
