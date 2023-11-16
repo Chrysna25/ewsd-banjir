@@ -23,14 +23,14 @@ function updateSensorData() {
                     background = 'bg-gradient-warning'
                 }else if(data.v0 >= 800 && data.v0 < 900) {
                     status = 'WASPADA'
-                    background = 'bg-gradient-secondary'
+                    background = 'bg-gradient-waspada'
                 }else {
                     status = 'BAHAYA'
                     background = 'bg-gradient-danger'
                 }
 
                 $('#status').text(status);
-                $('#card-status').removeClass(['bg-gradient-success', 'bg-gradient-warning', 'bg-gradient-secondary', 'bg-gradient-danger'])
+                $('#card-status').removeClass(['bg-gradient-success', 'bg-gradient-warning', 'bg-gradient-waspada', 'bg-gradient-danger'])
                 $('#card-status').addClass(background);
             } else {
                 console.warn('Empty data received.');
