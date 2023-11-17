@@ -25,11 +25,17 @@ class Dashboard extends Controller
         }
 
         $sensorData = [Dashboard::getSensor()];
+        // $ultrasonicHistory = [Dashboard::getHistoryUltrasonic()];
+        // $flowmeterHistory = [Dashboard::getHistoryFlowmeter()];
+
+        // dd($ultrasonicHistory);
 
         return view('admin.dashboard', [
             'title' => $title,
             'cities' => $cities,
-            'sensorData' => $sensorData
+            'sensorData' => $sensorData,
+            // 'ultrasonicHistory' => $ultrasonicHistory,
+            // 'flowmeterHistory' => $flowmeterHistory
         ]);
     }
 
@@ -53,6 +59,46 @@ class Dashboard extends Controller
 
         $response = Http::get($url, [
             "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP"
+        ]);
+
+        $responseBody = json_decode($response->getBody(), true);
+
+        return ($responseBody);
+    }
+
+    public function getHistoryUltrasonic()
+    {
+        $url = "https://blynk.cloud/external/api/data/get";
+
+        $response = Http::get($url, [
+            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
+            "period" => "HOUR",
+            "granularityType" => "DAILY",
+            "sourceType" => "MAX",
+            "tzName" => "Asia/Tokyo",
+            "format" => "ISO_SIMPLE",
+            "output" => "JSON",
+            "dataStreamId" => "1"
+        ]);
+
+        $responseBody = json_decode($response->getBody(), true);
+
+        return ($responseBody);
+    }
+
+    public function getHistoryFlowmeter()
+    {
+        $url = "https://blynk.cloud/external/api/data/get";
+
+        $response = Http::get($url, [
+            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
+            "period" => "HOUR",
+            "granularityType" => "MINUTE",
+            "sourceType" => "MAX",
+            "tzName" => "Asia/Tokyo",
+            "format" => "ISO_SIMPLE",
+            "output" => "JSON",
+            "dataStreamId" => "2"
         ]);
 
         $responseBody = json_decode($response->getBody(), true);

@@ -14,7 +14,7 @@ function updateSensorData() {
 
                 let status = 'AMAN';
                 let background = 'bg-gradient-success';
-
+                    
                 if(data.v0 < 700){
                     status = 'AMAN'
                     background = 'bg-gradient-success'

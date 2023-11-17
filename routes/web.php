@@ -17,3 +17,5 @@ use App\Http\Controllers\Dashboard;
 Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
 
 Route::get('/get-sensor', [Dashboard::class, 'getSensor']);
+Route::get('/get-ultrasonic-history', [Dashboard::class, 'getHistoryUltrasonic']);
+Route::get('/get-flowmeter-history', [Dashboard::class, 'getHistoryFlowmeter']);
