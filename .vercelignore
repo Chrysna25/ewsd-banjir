@@ -1,1 +1,4 @@
 /vendor
+/test
+/dist
+/public/assets/img
