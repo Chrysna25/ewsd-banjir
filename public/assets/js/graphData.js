@@ -10,12 +10,12 @@ gradientStroke2.addColorStop(1, 'rgba(203,12,159,0.2)');
 gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
 gradientStroke2.addColorStop(0, 'rgba(203,12,159,0)');
 
-function updateChartUltrasonic() {
+function updateChartUltrasonic(timestamps, values) {
     new Chart(ctx_ultrasonic, {
         type: "line",
         data: {
-            // labels: timestamps,
-            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            labels: timestamps,
+            // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             datasets: [{
                 label: "Mobile apps",
                 tension: 0.4,
@@ -25,8 +25,8 @@ function updateChartUltrasonic() {
                 borderWidth: 3,
                 backgroundColor: gradientStroke1,
                 fill: true,
-                // data: values,
-                data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+                data: values,
+                // data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
                 maxBarThickness: 6
             }],
         },
@@ -97,12 +97,32 @@ function updateHistoryData() {
             // Check if the data is not empty
             if (data && data.data && data.data.length > 0) {
                 // Extract timestamps and values from the received data
-                const timestamps = data.data.map(entry => entry.ts);
+                // const timestamps = data.data.map(entry => entry.ts);
+
+                const timestamps = data.data.map(entry => {
+                    // Convert timestamp to Date object
+                    const date = new Date(entry.ts);
+
+                    date.setHours(date.getHours() - 2)
+                    
+                    // Get hours, minutes, and seconds
+                    const hours = date.getHours();
+                    const minutes = date.getMinutes();
+                    const seconds = date.getSeconds();
+
+                    // Format the time in Indonesia/WIB timezone
+                    const formattedTime = `${hours}:${minutes}:${seconds} WIB`;
+
+                    return formattedTime;
+                });
                 const values = data.data.map(entry => entry.value);
 
+                const reversedTimestamps = timestamps.reverse();
+                const reversedValues = values.reverse();
+
                 // Update the chart
-                // updateChartUltrasonic(timestamps, values);
-                updateChartUltrasonic();
+                updateChartUltrasonic(reversedTimestamps, reversedValues);
+                // updateChartUltrasonic();
             } else {
                 console.warn('Empty data received.');
                 updateChartUltrasonic();
@@ -117,14 +137,14 @@ function updateHistoryData() {
 // Call the updateHistoryData function to initialize the chart
 updateHistoryData();
 
-function updateChartFlowmeter() {
+function updateChartFlowmeter(timestamps, values) {
     new Chart(ctx_flowmeter, {
         type: "line",
         data: {
-            // labels: timestamps,
-            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            labels: timestamps,
+            // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             datasets: [{
-                label: "Mobile apps",
+                label: timestamps,
                 tension: 0.4,
                 borderWidth: 0,
                 pointRadius: 0,
@@ -132,8 +152,8 @@ function updateChartFlowmeter() {
                 borderWidth: 3,
                 backgroundColor: gradientStroke2,
                 fill: true,
-                // data: values,
-                data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+                data: values,
+                // data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
                 maxBarThickness: 6
             }],
         },
@@ -201,18 +221,35 @@ function updateHistoryData2() {
         url: '/get-flowmeter-history',
         method: 'GET',
         success: function (data) {
-            // Check if the data is not empty
             if (data && data.data && data.data.length > 0) {
                 // Extract timestamps and values from the received data
-                const timestamps = data.data.map(entry => entry.ts);
+                // const timestamps = data.data.map(entry => entry.ts);
+
+                const timestamps = data.data.map(entry => {
+                    // Convert timestamp to Date object
+                    const date = new Date(entry.ts);
+
+                    date.setHours(date.getHours() - 2)
+                    
+                    // Get hours, minutes, and seconds
+                    const hours = date.getHours();
+                    const minutes = date.getMinutes();
+                    const seconds = date.getSeconds();
+
+                    // Format the time in Indonesia/WIB timezone
+                    const formattedTime = `${hours}:${minutes}:${seconds} WIB`;
+
+                    return formattedTime;
+                });
                 const values = data.data.map(entry => entry.value);
 
+                const reversedTimestamps = timestamps.reverse();
+                const reversedValues = values.reverse();
+
                 // Update the chart
-                // updateChartFlowmeter(timestamps, values);
-                updateChartFlowmeter();
+                updateChartFlowmeter(reversedTimestamps, reversedValues);
             } else {
                 console.warn('Empty data received.');
-                updateChartFlowmeter();
             }
         },
         error: function (error) {

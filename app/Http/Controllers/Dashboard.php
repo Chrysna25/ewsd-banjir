@@ -72,8 +72,8 @@ class Dashboard extends Controller
 
         $response = Http::get($url, [
             "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
-            "period" => "HOUR",
-            "granularityType" => "DAILY",
+            "period" => "DAY",
+            "granularityType" => "MINUTE",
             "sourceType" => "MAX",
             "tzName" => "Asia/Tokyo",
             "format" => "ISO_SIMPLE",
@@ -92,7 +92,7 @@ class Dashboard extends Controller
 
         $response = Http::get($url, [
             "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
-            "period" => "HOUR",
+            "period" => "DAY",
             "granularityType" => "MINUTE",
             "sourceType" => "MAX",
             "tzName" => "Asia/Tokyo",
