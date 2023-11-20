@@ -53,7 +53,7 @@
                         <div class="col-8">
                           <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Ketinggian Air</p>
                           <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data1">
-                            {{$sensor['v0']}} m
+                            m
                           </h5>
                         </div>
                         <div class="col-4 text-end">
@@ -76,7 +76,7 @@
                         <div class="col-8">
                           <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Kecepatan Arus</p>
                           <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data2">
-                            {{$sensor['v1']}} ml/m
+                            ml/m
                           </h5>
                         </div>
                         <div class="col-4 text-end">
