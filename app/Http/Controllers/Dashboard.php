@@ -43,7 +43,7 @@ class Dashboard extends Controller
     {
         $url = "https://api.openweathermap.org/data/2.5/weather";
 
-        $response = Http::get($url, [
+        $response = Http::withoutVerifying()->get($url, [
             "q" => $city,
             "appid" => "a50948b4ce3ff755f002f4c366a9e8c8"
         ]);
@@ -57,7 +57,7 @@ class Dashboard extends Controller
     {
         $url = "https://blynk.cloud/external/api/getAll";
 
-        $response = Http::get($url, [
+        $response = Http::withoutVerifying()->get($url, [
             "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP"
         ]);
 
@@ -68,41 +68,41 @@ class Dashboard extends Controller
 
     public function getHistoryUltrasonic()
     {
-        $url = "https://blynk.cloud/external/api/data/get";
+        // $url = "https://blynk.cloud/external/api/data/get";
 
-        $response = Http::get($url, [
-            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
-            "period" => "DAY",
-            "granularityType" => "MINUTE",
-            "sourceType" => "MAX",
-            "tzName" => "Asia/Tokyo",
-            "format" => "ISO_SIMPLE",
-            "output" => "JSON",
-            "dataStreamId" => "1"
-        ]);
+        // $response = Http::withoutVerifying()->get($url, [
+        //     "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
+        //     "period" => "DAY",
+        //     "granularityType" => "MINUTE",
+        //     "sourceType" => "MAX",
+        //     "tzName" => "Asia/Tokyo",
+        //     "format" => "ISO_SIMPLE",
+        //     "output" => "JSON",
+        //     "dataStreamId" => "1"
+        // ]);
 
-        $responseBody = json_decode($response->getBody(), true);
+        // $responseBody = json_decode($response->getBody(), true);
 
-        return ($responseBody);
+        // return ($responseBody);
     }
 
     public function getHistoryFlowmeter()
     {
-        $url = "https://blynk.cloud/external/api/data/get";
+        // $url = "https://blynk.cloud/external/api/data/get";
 
-        $response = Http::get($url, [
-            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
-            "period" => "DAY",
-            "granularityType" => "MINUTE",
-            "sourceType" => "MAX",
-            "tzName" => "Asia/Tokyo",
-            "format" => "ISO_SIMPLE",
-            "output" => "JSON",
-            "dataStreamId" => "2"
-        ]);
+        // $response = Http::withoutVerifying()->get($url, [
+        //     "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
+        //     "period" => "DAY",
+        //     "granularityType" => "MINUTE",
+        //     "sourceType" => "MAX",
+        //     "tzName" => "Asia/Tokyo",
+        //     "format" => "ISO_SIMPLE",
+        //     "output" => "JSON",
+        //     "dataStreamId" => "2"
+        // ]);
 
-        $responseBody = json_decode($response->getBody(), true);
+        // $responseBody = json_decode($response->getBody(), true);
 
-        return ($responseBody);
+        // return ($responseBody);
     }
 }
