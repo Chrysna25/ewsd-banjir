@@ -45,7 +45,7 @@
 
             <!-- Sensor Section Data -->
             <div class="row" id="sensor-data">
-              <div class="col-md-6 mb-4">
+              <div class="col-md-4 mb-4">
                 <div class="card shadow">
                   <div class="card-body p-3 text-center">
                     <div class="numbers">
@@ -68,15 +68,41 @@
                 </div>
               </div>
 
-              <div class="col-md-6 mb-4">
+
+                <div class="col-md-4 mb-4">
+                  <div class="card shadow">
+                    <div class="card-body p-3 text-center">
+                      <div class="numbers">
+                        <div class="row">
+                          <div class="col-8">
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Kecepatan Arus</p>
+                            <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data2">
+                              ml/m
+                            </h5>
+                          </div>
+                          <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-success
+                                 shadow text-center border-radius-md">
+                              <i class="ni ni-bold-up text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              <div class="col-md-4 mb-4">
                 <div class="card shadow">
                   <div class="card-body p-3 text-center">
                     <div class="numbers">
                       <div class="row">
                         <div class="col-8">
-                          <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Kecepatan Arus</p>
-                          <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data2">
-                            ml/m
+                          <p class="text-sm mb-0 text-capitalize font-weight-bold text-dark">Debit Air</p>
+                          <h5 class="font-weight-bolder mb-0 text-dark" id="sensor-data1">
+                            L / min
                           </h5>
                         </div>
                         <div class="col-4 text-end">
@@ -89,13 +115,18 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              
             </div>
+
+            
+
             <!-- Sensor Data Section End -->
 
+            
+
             <!-- Label Alert Section -->
-            <div class="col-md-6 mx-auto mb-4">
-              <div class="card py-3" id="card-status">
+            <div class="col-md-10 mx-auto mb-4">
+              <div class="card py-2" id="card-status">
                 <div class="card-body p-3 text-center">
                   <div class="numbers">
                     <h3 class="font-weight-bolder mb-0 text-light" id="status">
