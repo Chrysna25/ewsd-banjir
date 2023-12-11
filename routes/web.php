@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard;
 
@@ -15,6 +16,9 @@ use App\Http\Controllers\Dashboard;
 */
 
 Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+
+//about
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/get-sensor', [Dashboard::class, 'getSensor']);
 Route::get('/get-ultrasonic-history', [Dashboard::class, 'getHistoryUltrasonic']);
