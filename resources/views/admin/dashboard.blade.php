@@ -67,8 +67,7 @@
                                                     </div>
                                                     <div class="col-4 text-end">
                                                         <div
-                                                            class="icon icon-shape bg-gradient-success
-                               shadow text-center border-radius-md">
+                                                            class="icon icon-shape bg-gradient-success shadow text-center border-radius-md">
                                                             <i class="ni ni-bold-up text-lg opacity-10"
                                                                 aria-hidden="true"></i>
                                                         </div>

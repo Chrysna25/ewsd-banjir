@@ -7,7 +7,7 @@
             © <script>
               document.write(new Date().getFullYear())
             </script>,
-            made with <i class="fa fa-heart"></i> by Kelompok 5
+            made with </i> by Kelompok 5
             PKKM UNIVERSITAS GUNADARMA 2023.
           </div>
         </div>
