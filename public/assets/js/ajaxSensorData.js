@@ -9,7 +9,8 @@ function updateSensorData() {
                 // Update the DOM with the new data for each sensor
                 // Assuming there is a span with class 'sensor-value' inside the card
                 $('#sensor-data1').text(data.v0 + " meter");
-                $('#sensor-data2').text(data.v1 + " L / menit");
+                $('#sensor-data2').text(data.v1 + " m / Menit");
+                $('#sensor-data3').text(data.v2 + " L / Detik");
                 $('#sensor-card').html(data.v0);
 
                 let status = 'AMAN';

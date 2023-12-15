@@ -14,8 +14,8 @@ function updateChartUltrasonic(timestamps, values) {
     new Chart(ctx_ultrasonic, {
         type: "line",
         data: {
-            // labels: timestamps,
-            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            labels: timestamps,
+            // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             datasets: [{
                 label: "Ultrasonic",
                 tension: 0.4,
@@ -25,8 +25,8 @@ function updateChartUltrasonic(timestamps, values) {
                 borderWidth: 3,
                 backgroundColor: gradientStroke1,
                 fill: true,
-                // data: values,
-                data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+                data: values,
+                // data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
                 maxBarThickness: 6
             }],
         },
@@ -121,11 +121,11 @@ function updateHistoryData() {
                 const reversedValues = values.reverse();
 
                 // Update the chart
-                // updateChartUltrasonic(reversedTimestamps, reversedValues);
-                updateChartUltrasonic();
+                updateChartUltrasonic(reversedTimestamps, reversedValues);
+                // updateChartUltrasonic();
             } else {
                 console.warn('Empty data received.');
-                updateChartUltrasonic();
+                // updateChartUltrasonic();
             }
         },
         error: function (error) {
@@ -141,8 +141,8 @@ function updateChartFlowmeter(timestamps, values) {
     new Chart(ctx_flowmeter, {
         type: "line",
         data: {
-            // labels: timestamps,
-            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            labels: timestamps,
+            // labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
             datasets: [{
                 label: "Flowmeter",
                 tension: 0.4,
@@ -152,8 +152,8 @@ function updateChartFlowmeter(timestamps, values) {
                 borderWidth: 3,
                 backgroundColor: gradientStroke2,
                 fill: true,
-                // data: values,
-                data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+                data: values,
+                // data: [100, 200, 300, 400, 500, 600, 700, 800, 900],
                 maxBarThickness: 6
             }],
         },
@@ -247,11 +247,11 @@ function updateHistoryData2() {
                 const reversedValues = values.reverse();
 
                 // Update the chart
-                // updateChartFlowmeter(reversedTimestamps, reversedValues);
-                updateChartFlowmeter();
+                updateChartFlowmeter(reversedTimestamps, reversedValues);
+                // updateChartFlowmeter();
             } else {
                 console.warn('Empty data received.');
-                updateChartFlowmeter();
+                // updateChartFlowmeter();
             }
         },
         error: function (error) {
