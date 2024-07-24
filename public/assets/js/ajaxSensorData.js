@@ -16,7 +16,7 @@ function updateSensorData() {
                 let status = 'AMAN';
                 let background = 'bg-gradient-success';
 
-                if(data.v0 <= 5){
+                if(data.v0 < 5){
                     status = 'AMAN'
                     background = 'bg-gradient-success'
                 }else if(data.v0 >= 6 && data.v0 < 8) {
