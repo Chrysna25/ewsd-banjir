@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const apiKey = "a50948b4ce3ff755f002f4c366a9e8c8"; // Ganti dengan kunci API OpenWeatherMap Anda
+    const apiKey = "905c11edfcd4e34e0448db2e2d7b52e9"; // Ganti dengan kunci API OpenWeatherMap Anda
 
     // First City: Cianjur
     const city1 = "Cianjur";

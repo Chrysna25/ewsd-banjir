@@ -45,7 +45,7 @@ class Dashboard extends Controller
 
         $response = Http::withoutVerifying()->get($url, [
             "q" => $city,
-            "appid" => "a50948b4ce3ff755f002f4c366a9e8c8"
+            "appid" => "905c11edfcd4e34e0448db2e2d7b52e9"
         ]);
 
         $responseBody = json_decode($response->getBody());
@@ -58,7 +58,7 @@ class Dashboard extends Controller
         $url = "https://blynk.cloud/external/api/getAll";
 
         $response = Http::withoutVerifying()->get($url, [
-            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP"
+            "token" => "ID1RuRnevmQ6Eb4wbtWfkmJhtQBux5zv"
         ]);
 
         $responseBody = json_decode($response->getBody(), true);
@@ -71,7 +71,7 @@ class Dashboard extends Controller
         $url = "https://blynk.cloud/external/api/data/get";
 
         $response = Http::withoutVerifying()->get($url, [
-            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
+            "token" => "ID1RuRnevmQ6Eb4wbtWfkmJhtQBux5zv",
             "period" => "DAY",
             "granularityType" => "MINUTE",
             "sourceType" => "MAX",
@@ -91,7 +91,7 @@ class Dashboard extends Controller
         $url = "https://blynk.cloud/external/api/data/get";
 
         $response = Http::withoutVerifying()->get($url, [
-            "token" => "iFpr95TA4HL9JHac8CPhTkrB3VFuHKJP",
+            "token" => "ID1RuRnevmQ6Eb4wbtWfkmJhtQBux5zv",
             "period" => "DAY",
             "granularityType" => "MINUTE",
             "sourceType" => "MAX",

@@ -64,12 +64,13 @@
                             Dalam projek kerja magang bersama Kartanagari Group dan Universitas Gunadarma.
                             untuk merancang, mengembangkan platform EWSD agar dapat memberikan layanan
                             yang andal dan efektif.
-                            <br>
+                            <br> 
                             <br>
                             Projek ini dikembangkan oleh tim yang terdiri dari :
                             <br>
                             <br>
                             <ul style="list-style-type: none; padding: 0;">
+                                <li>Sandy Suryo Prayogo, S.T., M.T. (Dosen Pendamping)</li>
                                 <li>Dede Dwi Wira Putra/Ketua Tim (50420346)</li>
                                 <li>Chrysna Rinaldy Maturbongs (50421311)</li>
                                 <li>Dimas Fauzian As’aryanda (50421387)</li>

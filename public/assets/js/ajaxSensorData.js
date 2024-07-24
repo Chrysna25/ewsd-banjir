@@ -15,14 +15,14 @@ function updateSensorData() {
 
                 let status = 'AMAN';
                 let background = 'bg-gradient-success';
-                    
-                if(data.v0 < 700){
+
+                if(data.v0 <= 5){
                     status = 'AMAN'
                     background = 'bg-gradient-success'
-                }else if(data.v0 >= 700 && data.v0 < 800) {
+                }else if(data.v0 >= 6 && data.v0 < 8) {
                     status = 'SIAGA'
                     background = 'bg-gradient-warning'
-                }else if(data.v0 >= 800 && data.v0 < 900) {
+                }else if(data.v0 >= 8 && data.v0 < 12) {
                     status = 'WASPADA'
                     background = 'bg-gradient-waspada'
                 }else {
